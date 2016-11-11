@@ -2,7 +2,7 @@
  *
  *  a program that prints, 'Hello world'
  *
- *  Author: C. M. Hughes
+ *  Author: cmhughes
  *  Date:   November 11th, 2016
  *
  *  Output: Hello World
@@ -36,8 +36,7 @@
  *
  */
 #include <iostream>
-int main()
-{
+int main() {
     std::cout << "Hello World\n";
     return (0);
 }
