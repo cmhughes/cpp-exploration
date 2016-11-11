@@ -21,6 +21,7 @@
  *
  */
 #include <iostream>
+#include <fstream>
 
 int main() {
     /* declare the right hand side function */
@@ -38,7 +39,16 @@ int main() {
     double x=a;
     double y=y0;
 
-    /* this loop implements the algorithm, and outputs to screen */
+    /* create a file handle for the output */
+    std::ofstream out_file("euler.dat");
+
+    /* heading in the output file */
+    out_file << "# This file is called euler.dat\n";
+    out_file << "# and was created by Eulers-method-to-file.cpp\n";
+    out_file << "# Do not edit directly! Edit using Eulers-method-to-file.cpp\n";
+    out_file << "# x\ty\n";
+
+    /* this loop implements the algorithm, and outputs to file */
     while(x<=b){
 
         // y[n] = y[n-1] + h*f(x[n-1],y[n-1])
@@ -47,8 +57,8 @@ int main() {
         // add h to x
         x += h;
 
-        // output to screen
-        std::cout << "x is " << x << " and y is " << y << "\n";
+        // output to file, see pg 250 of Practical C++ Programming
+        out_file << x << "\t" << y << "\n";
     }
 
     /* output to screen */
@@ -72,6 +82,6 @@ int main() {
  */
 double f(double x, double y){
 
-    // return the right hand side value
+    // the right hand side function can be any function of x or y
     return (2*y-1);
 }
