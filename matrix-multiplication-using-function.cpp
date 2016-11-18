@@ -67,8 +67,7 @@ void matrix_multiplication(int *matrix_a, int number_rows_in_matrix_a, int numbe
     }
 }
 
-int main()
-{
+int main() {
     // define the matrix_a
     int matrix_a[2][3] = {
                            {2,4,8},
